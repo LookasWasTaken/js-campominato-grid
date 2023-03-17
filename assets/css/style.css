@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.play{
+    width: 85px;
+    height: 40px;
+    border-radius: 35px;
+    padding: 0 0.5rem;
+    transition: all 0.5s;
+    border-color: #001533;
+    font-size: 1.2rem;
+}
+
+.play:active{
+    scale: 1.2;
+}
+
+label i{
+    color: #001533;
+}
+
+.color_boolean{
+    color: #001533;
+}
+
+.img-fluid{
+    vertical-align: middle;
+}
+
+select{
+    width: 120px;
+    height: 40px;
+    font-size: 1.2rem;
+}
+
+select:hover, option:hover, i:hover{
+    cursor: pointer;
+}
+
+#app_main{
+    background-color: #80ffd5;
+    box-shadow: 0 0 5px 0 inset black;
+    height: 1000px;
+}
