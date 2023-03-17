@@ -10,3 +10,34 @@ Aggiungere una select accanto al bottone di generazione, che fornisca una scelta
 con difficoltà 1 => 100 caselle, con un numero compreso tra 1 e 100, divise in 10 caselle per 10 righe; // quindi * 10
 con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe; // quindi * 9
 con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe; */ // quindi * 7
+
+// Seleziono la select
+const select = document.getElementById("mode_selected");
+
+// Seleziono il bottone Play da dove dovrà partire un eventListener che genererà una griglia quadrata 10x10
+
+const play = document.querySelector(".play");
+
+// Creo un eventListener sul play quando è selezionata la current option
+
+play.addEventListener("click", function () {
+  // Seleziono l'option
+  let getValue = select.selectedOptions[0].value;
+  console.log("Ho premuto Play in modalità:", getValue);
+});
+
+// Funzione per abilitare il bottone Play quando una option è selezionata
+
+select.addEventListener("change", function () {
+    let getValue = select.selectedOptions[0].value;
+    if (getValue !== "") {
+        play.innerHTML = "PLAY"
+        play.disabled = false
+    } else {
+        play.innerHTML = "Choose"
+        play.disabled = true
+    }
+});
+
+
+

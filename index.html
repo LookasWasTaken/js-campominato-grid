@@ -29,19 +29,22 @@
             </div>
             <div class="nav justify-content-center align-items-center gap-2">
                 <label for="difficulty"><i class="fa-brands fa-react fa-2x fa-spin"></i></label>
-                <select class="color_boolean" name="difficulty" id="difficulty">
+                <select class="color_boolean" name="difficulty" id="mode_selected">
+                    <option value="">Select Mode...</option>
                     <option class="color_boolean" value="Easy">EASY</option>
                     <option class="color_boolean" value="Medium">MEDIUM</option>
                     <option class="color_boolean" value="Hard">HARD</option>
                 </select>
-                <button class="play">PLAY</button>
+                <button class="play" disabled>PLAY</button>
             </div>
             <!-- /.nav -->
         </div>
     </header>
     <!-- /#app_header -->
     <main id="app_main">
-        <div class="container"></div>
+        <div class="container">
+            <div class="grid"></div>
+        </div>
     </main>
     <!-- /#app_main -->
     <footer id="app_footer" class="py-2">

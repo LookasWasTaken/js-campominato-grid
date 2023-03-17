@@ -61,7 +61,7 @@ select:hover, option:hover, i:hover{
 #app_main{
     background-color: #80ffd5;
     box-shadow: 0 0 5px 0 inset black;
-    height: 1000px;
+    height: 500px;
 }
 
 
