@@ -29,15 +29,57 @@ play.addEventListener("click", function () {
 // Funzione per abilitare il bottone Play quando una option è selezionata
 
 select.addEventListener("change", function () {
-    let getValue = select.selectedOptions[0].value;
-    if (getValue !== "") {
-        play.innerHTML = "PLAY"
-        play.disabled = false
-    } else {
-        play.innerHTML = "Choose"
-        play.disabled = true
-    }
+  let getValue = select.selectedOptions[0].value;
+  displayGrid(getValue);
+  if (getValue !== "") {
+    play.innerHTML = "PLAY";
+    play.disabled = false;
+    console.log("Modalità Selezionata Correttamente");
+  } else {
+    play.innerHTML = "Choose";
+    play.disabled = true;
+  }
 });
 
+// Seleziono il futuro contenitore dei miei elementi dinamici
 
+const gridEl = document.getElementById("grid");
+console.log(grid, "Griglia selezionata");
 
+// Inserisco un H2 di Default all'inizializzazione del documento html
+
+let optionShowed = `<h2 class="color_boolean text-center py-5">No mode selected</h2>`;
+gridEl.insertAdjacentHTML("beforeend", optionShowed);
+
+// Funzione dinamica per mostrare le griglie dinamiche
+
+function displayGrid(mode) {
+  switch (mode) {
+    case "Easy":
+      console.log("Selezionato Easy");
+      let optionEasy = `<h2 class="color_boolean text-center py-5">mode easy</h2>`;
+      gridEl.innerHTML = "";
+      gridEl.insertAdjacentHTML("beforeend", optionEasy);
+      break;
+
+    case "Medium":
+      console.log("Selezionato Medium");
+      let optionMedium = `<h2 class="color_boolean text-center py-5">mode medium</h2>`;
+      gridEl.innerHTML = "";
+      gridEl.insertAdjacentHTML("beforeend", optionMedium);
+      break;
+
+    case "Hard":
+      console.log("Selezionato Hard");
+      let optionHard = `<h2 class="color_boolean text-center py-5">mode hard</h2>`;
+      gridEl.innerHTML = "";
+      gridEl.insertAdjacentHTML("beforeend", optionHard);
+      break;
+
+    default:
+      let defaultOption = `<h2 class="color_boolean text-center py-5">No mode selected</h2>`;
+      gridEl.innerHTML = "";
+      gridEl.insertAdjacentHTML("beforeend", defaultOption);
+      break;
+  }
+}
