@@ -7,6 +7,12 @@
     user-select: none; /* Standard syntax */
 }
 
+:root{
+    --font-lato: 'Lato', sans-serif;
+    --font-game: 'Odibee Sans', cursive;
+    --font-arcade: 'Press Start 2P', cursive;
+}
+
 .play{
     width: 85px;
     height: 40px;
@@ -15,6 +21,7 @@
     transition: all 0.5s;
     border-color: #001533;
     font-size: 1.2rem;
+    font-family: var(--font-game);
 }
 
 .play:active{
@@ -39,6 +46,14 @@ select{
     font-size: 1.2rem;
 }
 
+option{
+    height: 30px;
+}
+
+select, option{
+    font-family: var(--font-game);
+}
+
 select:hover, option:hover, i:hover{
     cursor: pointer;
 }
@@ -47,4 +62,15 @@ select:hover, option:hover, i:hover{
     background-color: #80ffd5;
     box-shadow: 0 0 5px 0 inset black;
     height: 1000px;
+}
+
+
+.lookas{
+    text-decoration: none;
+    color: #001533;
+    transition: all 0.5s;
+}
+
+.lookas:hover{
+    scale: 1.1;
 }
