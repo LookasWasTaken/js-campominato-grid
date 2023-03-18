@@ -1,19 +1,45 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
 }
 
-:root{
+:root {
     --font-lato: 'Lato', sans-serif;
     --font-game: 'Odibee Sans', cursive;
     --font-arcade: 'Press Start 2P', cursive;
 }
 
-.play{
+h1 {
+    font-family: var(--font-game);
+    text-transform: uppercase;
+    background-image: linear-gradient(-225deg,
+            #231557 0%,
+            #44107a 29%,
+            #ff1361 67%,
+            #fff800 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.play {
     width: 85px;
     height: 40px;
     border-radius: 35px;
@@ -24,53 +50,55 @@
     font-family: var(--font-game);
 }
 
-.play:active{
+.play:active {
     scale: 1.2;
 }
 
-label i{
+label i {
     color: #001533;
 }
 
-.color_boolean{
+.color_boolean {
     color: #001533;
 }
 
-.img-fluid{
+.img-fluid {
     vertical-align: middle;
 }
 
-select{
+select {
     width: 150px;
     height: 40px;
     font-size: 1.2rem;
 }
 
-option{
+option {
     height: 30px;
 }
 
-select, option{
+select,
+option {
     font-family: var(--font-game);
 }
 
-select:hover, option:hover, i:hover{
+select:hover,
+option:hover,
+i:hover {
     cursor: pointer;
 }
 
-#app_main{
+#app_main {
     background-color: #80ffd5;
     box-shadow: 0 0 5px 0 inset black;
     height: 500px;
 }
 
-
-.lookas{
+.lookas {
     text-decoration: none;
     color: #001533;
     transition: all 0.5s;
 }
 
-.lookas:hover{
+.lookas:hover {
     scale: 1.1;
 }

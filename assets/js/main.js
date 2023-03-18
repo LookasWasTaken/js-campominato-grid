@@ -51,7 +51,7 @@ console.log(grid, "Griglia selezionata");
 let optionShowed = `<h2 class="color_boolean text-center py-5">No mode selected</h2>`;
 gridEl.insertAdjacentHTML("beforeend", optionShowed);
 
-// Funzione dinamica per mostrare le griglie dinamiche
+// Switch case ad hoc per la modalità selezionata
 
 function displayGrid(mode) {
   switch (mode) {
