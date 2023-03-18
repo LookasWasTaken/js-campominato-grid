@@ -14,7 +14,7 @@ con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 
 // Seleziono la select
 const select = document.getElementById("mode_selected");
 
-// Seleziono il bottone Play da dove dovrà partire un eventListener che genererà una griglia quadrata 10x10
+// Seleziono il bottone Play da dove dovrà partire un eventListener che genererà una griglia quadrata
 
 const play = document.querySelector(".play");
 
@@ -26,6 +26,25 @@ play.addEventListener("click", function () {
   console.log("Ho premuto Play in modalità:", getValue);
   displayGrid(getValue);
 });
+
+// Seleziono il bottone Reset
+
+const reset = document.querySelector(".reset");
+
+// Creo un eventListener sul reset che cancellerà tutto il contenuto
+
+reset.addEventListener("click", function () {
+  defaultOption();
+});
+
+// Seleziono il futuro contenitore dei miei elementi dinamici
+
+const gridEl = document.getElementById("grid");
+
+// Inserisco un H2 di Default all'inizializzazione del documento html
+
+let optionShowed = `<h2 class="color_boolean text-center py-5">No mode selected</h2>`;
+gridEl.insertAdjacentHTML("beforeend", optionShowed);
 
 // Funzione per abilitare il bottone Play quando una option è selezionata
 
@@ -41,16 +60,7 @@ select.addEventListener("change", function () {
   }
 });
 
-// Seleziono il futuro contenitore dei miei elementi dinamici
-
-const gridEl = document.getElementById("grid");
-
-// Inserisco un H2 di Default all'inizializzazione del documento html
-
-let optionShowed = `<h2 class="color_boolean text-center py-5">No mode selected</h2>`;
-gridEl.insertAdjacentHTML("beforeend", optionShowed);
-
-// Switch case ad hoc per la modalità selezionata
+// Switch case ad hoc per la modalità selezionata dove il PARAM (mode) sarà sostituito dalle stringhe del case ("Easy, Medium, Hard")
 
 function displayGrid(mode) {
   switch (mode) {
@@ -75,29 +85,38 @@ function displayGrid(mode) {
   }
 }
 
-function createCell(number) {
-  for (let i = 1; i <= number; i++) {
-    console.log(i);
-    let cell = document.createElement("div");
-    cell.classList.add("cell")
-    cell.addEventListener("click", function () {
-      cell.classList.add("bg");
-      console.log("luca");
-    });
-    cell.innerHTML = i.toString();
-    gridEl.appendChild(cell);
-  }
-}
-
-const reset = document.querySelector(".reset");
-
-reset.addEventListener("click", function () {
-  defaultOption();
-});
-
+// Funzione per riportare al valore di default il contenuto di gridEl
 
 function defaultOption() {
   let defaultOption = `<h2 class="color_boolean text-center py-5">No mode selected</h2>`;
   gridEl.innerHTML = "";
   gridEl.insertAdjacentHTML("beforeend", defaultOption);
+}
+
+// Funzione per settare con un If/ElseIf/Else la width delle celle dinamicamente
+
+function getCellClass(cellNumber) {
+  if (cellNumber === 49) {
+    return "easy";
+  } else if (cellNumber === 81) {
+    return "medium";
+  } else {
+    return "hard";
+  }
+}
+
+// Funzione per la generazione di celle dinamiche, il numero di celle da creare sarà determinato dalla funzione interna getCellClass()
+
+function createCell(cellNumber) {
+  const cellClass = getCellClass(cellNumber);
+  for (let i = 1; i <= cellNumber; i++) {
+    let cell = document.createElement("div");
+    cell.classList.add("cell", cellClass);
+    cell.addEventListener("click", function () {
+      cell.classList.add("bg");
+      console.log(cell.innerText);
+    });
+    cell.innerHTML = i.toString();
+    gridEl.appendChild(cell);
+  }
 }

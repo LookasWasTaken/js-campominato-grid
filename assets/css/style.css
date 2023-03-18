@@ -92,10 +92,17 @@ select {
     width: 150px;
     height: 40px;
     font-size: 1.2rem;
+    border-radius: 25px;
+    padding: 0 15px;
+    border: 2px solid var(--blue-boolean);
 }
 
 option {
     height: 30px;
+}
+
+option:hover{
+    background-color: var(--blue-boolean) !important;
 }
 
 select,
@@ -117,6 +124,13 @@ i:hover {
 .shadow{
     box-shadow: 0 0 5px 0 inset black;
     border-radius: 25px;
+}
+
+h2{
+    font-family: var(--font-game);
+    text-transform: uppercase;
+    letter-spacing: 0.8rem;
+    color: var(--blue-boolean);
 }
 
 .easy{
