@@ -86,7 +86,7 @@ i:hover {
 }
 
 #app_main {
-    background-color: #80ffd5;
+    background-color: var(--green-boolean);
     box-shadow: 0 0 5px 0 inset black;
     height: 500px;
 }
