@@ -14,16 +14,18 @@
     --font-lato: 'Lato', sans-serif;
     --font-game: 'Odibee Sans', cursive;
     --font-arcade: 'Press Start 2P', cursive;
+    --green-boolean: #00e165;
+    --blue-boolean: #001533;
 }
 
 h1 {
     font-family: var(--font-game);
     text-transform: uppercase;
     background-image: linear-gradient(-225deg,
-            #231557 0%,
-            #44107a 29%,
-            #ff1361 67%,
-            #fff800 100%);
+            #001533 0%,
+            #032658 29%,
+            #058b41 67%,
+            #00e165 100%);
     background-size: auto auto;
     background-clip: border-box;
     background-size: 200% auto;
@@ -54,12 +56,9 @@ h1 {
     scale: 1.2;
 }
 
-label i {
-    color: #001533;
-}
-
+label i,
 .color_boolean {
-    color: #001533;
+    color: var(--blue-boolean);
 }
 
 .img-fluid {
@@ -95,10 +94,11 @@ i:hover {
 
 .lookas {
     text-decoration: none;
-    color: #001533;
+    color: var(--blue-boolean);
     transition: all 0.5s;
 }
 
 .lookas:hover {
     scale: 1.1;
+    color: var(--green-boolean);
 }
