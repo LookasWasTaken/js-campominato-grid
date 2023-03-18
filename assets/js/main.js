@@ -24,13 +24,13 @@ play.addEventListener("click", function () {
   // Seleziono l'option
   let getValue = select.selectedOptions[0].value;
   console.log("Ho premuto Play in modalità:", getValue);
+  displayGrid(getValue);
 });
 
 // Funzione per abilitare il bottone Play quando una option è selezionata
 
 select.addEventListener("change", function () {
   let getValue = select.selectedOptions[0].value;
-  displayGrid(getValue);
   if (getValue !== "") {
     play.innerHTML = "PLAY";
     play.disabled = false;
@@ -44,7 +44,6 @@ select.addEventListener("change", function () {
 // Seleziono il futuro contenitore dei miei elementi dinamici
 
 const gridEl = document.getElementById("grid");
-console.log(grid, "Griglia selezionata");
 
 // Inserisco un H2 di Default all'inizializzazione del documento html
 
@@ -56,24 +55,24 @@ gridEl.insertAdjacentHTML("beforeend", optionShowed);
 function displayGrid(mode) {
   switch (mode) {
     case "Easy":
-      console.log("Selezionato Easy");
       let optionEasy = `<h2 class="color_boolean text-center py-5">mode easy</h2>`;
       gridEl.innerHTML = "";
       gridEl.insertAdjacentHTML("beforeend", optionEasy);
+      createCell(49);
       break;
 
     case "Medium":
-      console.log("Selezionato Medium");
       let optionMedium = `<h2 class="color_boolean text-center py-5">mode medium</h2>`;
       gridEl.innerHTML = "";
       gridEl.insertAdjacentHTML("beforeend", optionMedium);
+      createCell(81);
       break;
 
     case "Hard":
-      console.log("Selezionato Hard");
       let optionHard = `<h2 class="color_boolean text-center py-5">mode hard</h2>`;
       gridEl.innerHTML = "";
       gridEl.insertAdjacentHTML("beforeend", optionHard);
+      createCell(100);
       break;
 
     default:
@@ -83,3 +82,24 @@ function displayGrid(mode) {
       break;
   }
 }
+
+function createCell(number) {
+  for (let i = 1; i <= number; i++) {
+    console.log(i);
+    let cell = document.createElement("div");
+    cell.addEventListener("click", function () {
+      cell.classList.add("bg");
+      console.log("luca");
+    });
+    cell.innerHTML = i.toString();
+    gridEl.appendChild(cell);
+  }
+}
+
+const reset = document.querySelector(".reset");
+
+reset.addEventListener("click", function () {
+  let defaultOption = `<h2 class="color_boolean text-center py-5">No mode selected</h2>`;
+  gridEl.innerHTML = "";
+  gridEl.insertAdjacentHTML("beforeend", defaultOption);
+});

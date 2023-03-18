@@ -40,19 +40,43 @@ h1 {
     }
 }
 
-.play {
+.play, .reset {
     width: 85px;
     height: 40px;
     border-radius: 35px;
     padding: 0 0.5rem;
     transition: all 0.5s;
-    border-color: #001533;
+    border-color: var(--blue-boolean);
     font-size: 1.2rem;
     font-family: var(--font-game);
 }
 
+.reset{
+    color: white;
+    background-color: var(--blue-boolean);
+}
+
 .play:active {
     scale: 1.2;
+}
+
+.reset:active {
+    scale: 1.2;
+}
+
+.reset:hover .fa-rotate-right {
+    animation: spin 2s linear infinite;
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 label i,
@@ -89,6 +113,10 @@ i:hover {
     background-color: var(--green-boolean);
     box-shadow: 0 0 5px 0 inset black;
     height: 500px;
+}
+
+.bg {
+    background-color: var(--blue-boolean);
 }
 
 .lookas {
