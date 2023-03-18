@@ -55,30 +55,22 @@ gridEl.insertAdjacentHTML("beforeend", optionShowed);
 function displayGrid(mode) {
   switch (mode) {
     case "Easy":
-      let optionEasy = `<h2 class="color_boolean text-center py-5">mode easy</h2>`;
       gridEl.innerHTML = "";
-      gridEl.insertAdjacentHTML("beforeend", optionEasy);
       createCell(49);
       break;
 
     case "Medium":
-      let optionMedium = `<h2 class="color_boolean text-center py-5">mode medium</h2>`;
       gridEl.innerHTML = "";
-      gridEl.insertAdjacentHTML("beforeend", optionMedium);
       createCell(81);
       break;
 
     case "Hard":
-      let optionHard = `<h2 class="color_boolean text-center py-5">mode hard</h2>`;
       gridEl.innerHTML = "";
-      gridEl.insertAdjacentHTML("beforeend", optionHard);
       createCell(100);
       break;
 
     default:
-      let defaultOption = `<h2 class="color_boolean text-center py-5">No mode selected</h2>`;
-      gridEl.innerHTML = "";
-      gridEl.insertAdjacentHTML("beforeend", defaultOption);
+      defaultOption();
       break;
   }
 }
@@ -87,6 +79,7 @@ function createCell(number) {
   for (let i = 1; i <= number; i++) {
     console.log(i);
     let cell = document.createElement("div");
+    cell.classList.add("cell")
     cell.addEventListener("click", function () {
       cell.classList.add("bg");
       console.log("luca");
@@ -99,7 +92,12 @@ function createCell(number) {
 const reset = document.querySelector(".reset");
 
 reset.addEventListener("click", function () {
+  defaultOption();
+});
+
+
+function defaultOption() {
   let defaultOption = `<h2 class="color_boolean text-center py-5">No mode selected</h2>`;
   gridEl.innerHTML = "";
   gridEl.insertAdjacentHTML("beforeend", defaultOption);
-});
+}

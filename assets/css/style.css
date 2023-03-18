@@ -112,12 +112,40 @@ i:hover {
 #app_main {
     background-color: var(--green-boolean);
     box-shadow: 0 0 5px 0 inset black;
-    height: 500px;
+}
+
+.shadow{
+    box-shadow: 0 0 5px 0 inset black;
+    border-radius: 25px;
+}
+
+.easy{
+    width: calc(100% / 7);
+}
+
+.medium{
+    width: calc(100% / 9);
+}
+
+.hard{
+    width: calc(100% / 10);
+}
+
+.cell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: var(--green-boolean) 1px solid;
+    aspect-ratio: 1/1;
+    font-family: var(--font-arcade);
+    color: white;
+    background-color: var(--blue-boolean);
 }
 
 .bg {
-    background-color: var(--blue-boolean);
+    background-color: #00a44a;
 }
+
 
 .lookas {
     text-decoration: none;
