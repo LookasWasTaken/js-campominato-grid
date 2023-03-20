@@ -114,7 +114,7 @@ function createCell(cellNumber) {
     cell.classList.add("cell", cellClass);
     cell.addEventListener("click", function () {
       cell.classList.add("bg");
-      console.log(cell.innerText);
+      console.log("Numero Selezionato", cell.innerText);
     });
     cell.innerHTML = i.toString();
     gridEl.appendChild(cell);

@@ -163,6 +163,10 @@ h2{
     cursor: pointer;
 }
 
+.cell:active{
+    scale: 0.8;
+}
+
 .bg {
     background-color: #00a44a;
     color: black;
